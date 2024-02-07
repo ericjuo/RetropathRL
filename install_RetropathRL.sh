@@ -29,13 +29,15 @@ conda install pyyaml
 git clone https://github.com/brsynth/RetroPathRL.git
 
 # Setup dependencies for RetroPathRL
+cd RetroPathRL
 pip install -e .
+
 
 # Install scope viewer for later use. Scope viewer is to inspect the output tree in HTML.
 git clone https://github.com/brsynth/scope-viewer.git
 
-# Install toxicity calculator for later use.
-conda install scikit-learn=0.19.1
+# Install toxicity calculator for later use.(Not available)
+# conda install scikit-learn=0.19.1
 
 # Set up database for caching
 conda install pymongo
@@ -46,12 +48,12 @@ pip install -e .
 # Hydrogen handling: implicit
 wget https://zenodo.org/record/5827969/files/retrorules_rr02_rp3_nohs.tar.gz
 tar zxvf retrorules_rr02_rp3_nohs.tar.gz
-# Hydrogen handling: explicit
+# Hydrogen handling: explicit (Failed! Suggest download directly from RetroRules website)
 wget https://zenodo.org/record/5827977/files/retrorules_rr03_rp3_hs.tar.gz
 tar zxvf retrorules_rr02_rp3_hs.tar.gz
 
 # Configure data path
-python calculate_rule_sets_similarity.py --rule_address_with_H retrorules_rr02_rp3_hs.tar.gz --rule_address_without_H retrorules_rr02_rp3.nohs.tar.gz
+python calculate_rule_sets_similarity.py --rule_address_with_H retrorules_rr02_rp3_hs/retrorules_rr02_flat_all.tsv --rule_address_without_H retrorules_rr02_rp3_nohs/retrorules_rr02_flat_all.tsv
 python calculate_organisms.py
 
 # Test run
