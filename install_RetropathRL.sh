@@ -42,8 +42,17 @@ git clone https://github.com/brsynth/scope-viewer.git
 # Set up database for caching
 conda install pymongo
 git clone https://github.com/brsynth/rp3_dcache.git
+cd rp3_dcache
 pip install -e .
-
+cd ..
+# 2024/2/15 Update. Follow rp3_dcache installation steps. Change to rp3_dcache folder before running the codes.
+source activate RetropathRL
+conda install --channel rdkit rdkit=2018.09.1.0
+conda install --channel conda-forge pytest
+conda install pytest
+conda install pymongo
+conda install pyyaml
+pip install -e .
 # Download RetroRules
 # Hydrogen handling: implicit
 wget https://zenodo.org/record/5827969/files/retrorules_rr02_rp3_nohs.tar.gz
