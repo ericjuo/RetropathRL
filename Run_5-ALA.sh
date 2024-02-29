@@ -12,9 +12,9 @@ set -e
 # ------------------------------------------
 # Main
 # -----------------------------------------
-ALA_InChI = "InChI=1S/C5H9NO3/c6-3-4(7)1-2-5(8)9/h1-3,6H2,(H,8,9)"
-ALA_name = "5-ALA"
-OUTDIR = "5-ALA_03_03_no_H" # the first 03 detnotes biological score cutoff=0.3; the second denote chem score cutoff=0.3
+ALA_InChI = 'InChI=1S/C5H9NO3/c6-3-4(7)1-2-5(8)9/h1-3,6H2,(H,8,9)'
+ALA_name = '5-ALA'
+OUTDIR = '5-ALA_03_03_no_H' # the first 03 detnotes biological score cutoff=0.3; the second denote chem score cutoff=0.3
 BIO_CUT = 0.3
 CHEM_CUT = 0.3
 
