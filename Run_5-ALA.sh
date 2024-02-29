@@ -17,6 +17,7 @@ ALA_name='5-ALA'
 OUTDIR='RetroPathRL/5-ALA_03_03_no_H' # the first 03 detnotes biological score cutoff=0.3; the second denote chem score cutoff=0.3
 BIO_CUT=0.3
 CHEM_CUT=0.3
+DIA='6 8 10 12 14 16'
 
 python RetroPathRL/Tree.py \
     --log_file tree.log \
@@ -33,7 +34,7 @@ python RetroPathRL/Tree.py \
     --chemical_scoring SubandprodChemicalScorer \
     --virtual_visits 0 \
     --progressive_bias_strategy 0 \
-    --diameter 10 12 14 16 \
+    --diameter $DIA \
     --c_name $ALA_name \
     --c_inchi $ALA_InChI \
     --folder_to_save $OUTDIR\
