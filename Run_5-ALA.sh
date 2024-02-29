@@ -1,3 +1,4 @@
+#A
 #!/bin/bash
 set -e
 # Run 5-ALA retrosynthesis pathway using RetropathRL
@@ -14,10 +15,10 @@ set -e
 # -----------------------------------------
 ALA_InChI='InChI=1S/C5H9NO3/c6-3-4(7)1-2-5(8)9/h1-3,6H2,(H,8,9)'
 ALA_name='5-ALA'
-OUTDIR='RetroPathRL/5-ALA_03_03_no_H' # the first 03 detnotes biological score cutoff=0.3; the second denote chem score cutoff=0.3
-BIO_CUT=0.3
-CHEM_CUT=0.3
-DIA='6 8 10 12 14 16'
+OUTDIR='5-ALA_01_07_with_H' # the first 03 detnotes biological score cutoff=0.3; the second denote chem score cutoff=0.3
+BIO_CUT=0.1
+CHEM_CUT=0.7
+DIA='10 12 14 16'
 
 python RetroPathRL/Tree.py \
     --log_file tree.log \
@@ -39,6 +40,7 @@ python RetroPathRL/Tree.py \
     --c_inchi $ALA_InChI \
     --folder_to_save $OUTDIR\
     --biological_score_cut_off $BIO_CUT \
+    --substrate_only_score_cut_off 0.7 \
     --chemical_score_cut_off $CHEM_CUT \
     --minimal_visit_counts 1
 
